@@ -1,0 +1,10 @@
+services:
+  dkron:
+    image: dkron/dkron:4.0.8
+    ports:
+      - "8080:8080"
+    command: agent --server --bootstrap-expect=1 --data-dir=/dkron.data
+    volumes:
+      - data:/dkron.data
+volumes:
+  data:
