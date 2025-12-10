@@ -6,5 +6,11 @@ services:
     command: agent --server --bootstrap-expect=1 --data-dir=/dkron.data
     volumes:
       - data:/dkron.data
+    # ücretli version için
+    environment:
+      - DKRON_AUTH_ENABLED=true
+      - DKRON_AUTH_USERNAME=admin
+      - DKRON_AUTH_PASSWORD=admin123
+
 volumes:
   data:
